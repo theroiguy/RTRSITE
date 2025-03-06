@@ -238,7 +238,7 @@
         chatBox.innerHTML += `<p><strong>You:</strong> ${userInput}</p>`;
 
         try {
-            let response = await fetch("https://leon-production-7fde.up.railway.app/api/query", {
+            let response = await fetch("https://leon-production-7f0e.up.railway.app/api/query", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ text: userInput })
