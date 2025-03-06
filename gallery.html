@@ -44,8 +44,9 @@
         }
 
         .gallery-container img {
-            width: 100%;
-            height: auto;
+            width: 400px; /* Ensures all images are the same width */
+            height: 250px; /* Ensures all images are the same height */
+            object-fit: cover; /* Prevents distortion while keeping the image visually appealing */
             border-radius: 5px;
             border: 3px solid #FFD700;
             transition: transform 0.3s ease-in-out;
