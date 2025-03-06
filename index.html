@@ -65,7 +65,7 @@
             font-weight: bold;
         }
 
-        /* Side-by-Side Before & After Images (Fixed Scaling) */
+        /* Side-by-Side Before & After Images (Now 100% Matched) */
         .gallery {
             display: flex;
             justify-content: center;
@@ -76,10 +76,9 @@
         }
 
         .gallery img {
-            width: 48%;
-            max-width: 500px;
-            height: auto;
-            object-fit: cover;
+            width: 500px; /* Fixed width to make images identical */
+            height: 300px; /* Fixed height to match aspect ratio */
+            object-fit: cover; /* Ensures the images fit perfectly */
             border-radius: 5px;
             border: 3px solid #FFD700;
             transition: transform 0.3s ease-in-out;
@@ -132,7 +131,7 @@
 <body>
 
 <header>
-    <img src="rtrlogo.png" alt="Revive & Thrive Renovations Logo" class="logo">
+    <img src="logo.png" alt="Revive & Thrive Renovations Logo" class="logo">
     <h1>Revive & Thrive Renovations</h1>
 </header>
 
@@ -142,7 +141,7 @@
 
     <h2 class="fade-in">Project Gallery</h2>
 
-    <!-- Side-by-Side Before & After Images -->
+    <!-- Side-by-Side Before & After Images (Fixed) -->
     <div class="gallery">
         <img src="before.jpeg" alt="Before Renovation">
         <img src="after.jpg" alt="After Renovation">
