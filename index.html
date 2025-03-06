@@ -87,7 +87,15 @@
         .gallery img:hover {
             transform: scale(1.05);
         }
-
+        
+        .image-label {
+            text-align: center;
+            font-size: 18px;
+            font-weight: bold;
+            color: #FFD700; /* Gold color */
+            margin-top: 2px;
+        }
+        
         /* Testimonials */
         .testimonial {
             background: rgba(255, 255, 255, 0.1);
@@ -143,8 +151,14 @@
 
     <!-- Side-by-Side Before & After Images (Fixed) -->
     <div class="gallery">
-    <img src="before.jpeg" alt="Before Renovation">
-    <img src="after.jpg" alt="After Renovation">
+    <div class="gallery-item">
+        <img src="before.jpeg" alt="Before Renovation">
+        <p class="image-label">Before</p>
+    </div>
+    <div class="gallery-item">
+        <img src="after.jpg" alt="After Renovation">
+        <p class="image-label">After</p>
+    </div>
 </div>
 
 <!-- View More Button -->
