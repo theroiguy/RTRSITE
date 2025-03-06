@@ -65,27 +65,30 @@
             font-weight: bold;
         }
 
-        /* Before & After Image Slider */
+        /* Before & After Image Slider (Fixed Scaling) */
         .comparison-slider {
             position: relative;
             width: 90%;
-            max-width: 500px;
-            height: 300px;
-            overflow: hidden;
+            max-width: 600px;
             margin: 20px auto;
             border-radius: 10px;
             border: 3px solid #FFD700;
+            overflow: hidden;
         }
 
-        .before, .after {
-            position: absolute;
-            top: 0;
-            left: 0;
+        .image-container {
+            position: relative;
             width: 100%;
-            height: 100%;
         }
 
-        .after img {
+        .image-container img {
+            width: 100%;
+            height: auto; /* Fixes zoom issue */
+            display: block;
+            position: absolute;
+        }
+
+        #after-img {
             clip-path: inset(0 50% 0 0);
         }
 
@@ -96,6 +99,7 @@
             width: 100%;
             transform: translateY(-50%);
             z-index: 2;
+            opacity: 0.8;
         }
 
         /* Testimonials */
@@ -165,7 +169,7 @@
 <body>
 
 <header>
-    <img src="rtrlogo.png" alt="Revive & Thrive Renovations Logo" class="logo">
+    <img src="logo.png" alt="Revive & Thrive Renovations Logo" class="logo">
     <h1>Revive & Thrive Renovations</h1>
 </header>
 
@@ -175,15 +179,13 @@
 
     <h2 class="fade-in">Project Gallery</h2>
 
-    <!-- Before & After Image Comparison -->
+    <!-- Before & After Image Comparison (Fixed) -->
     <div class="comparison-slider">
-        <div class="before">
-            <img src="before.jpeg" alt="Before Renovation" loading="lazy">
+        <div class="image-container">
+            <img src="before.jpeg" alt="Before Renovation" id="before-img">
+            <img src="after.jpg" alt="After Renovation" id="after-img">
         </div>
-        <div class="after">
-            <img src="after.jpg" alt="After Renovation" loading="lazy">
-        </div>
-        <input type="range" min="0" max="100" value="50" class="slider">
+        <input type="range" min="0" max="100" value="50" class="slider" id="slider">
     </div>
 
     <h2 class="fade-in">What Our Clients Say</h2>
@@ -220,17 +222,18 @@
 
 <!-- JavaScript for animations & Before/After slider -->
 <script>
-document.addEventListener("scroll", function () {
-    document.querySelectorAll(".fade-in").forEach((el) => {
-        if (el.getBoundingClientRect().top < window.innerHeight - 50) {
-            el.classList.add("show");
-        }
+    document.addEventListener("scroll", function () {
+        document.querySelectorAll(".fade-in").forEach((el) => {
+            if (el.getBoundingClientRect().top < window.innerHeight - 50) {
+                el.classList.add("show");
+            }
+        });
     });
-});
 
-document.querySelector(".slider").addEventListener("input", function () {
-    document.querySelector(".after img").style.clipPath = `inset(0 ${100 - this.value}% 0 0)`;
-});
+    document.getElementById("slider").addEventListener("input", function () {
+        let value = this.value;
+        document.getElementById("after-img").style.clipPath = `inset(0 ${100 - value}% 0 0)`;
+    });
 </script>
 
 </body>
