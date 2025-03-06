@@ -65,54 +65,7 @@
             font-weight: bold;
         }
 
-        /* Before & After Image Slider (Fixed Scaling) */
-        .comparison-slider {
-            position: relative;
-            width: 90%;
-            max-width: 600px;
-            margin: 20px auto;
-            border-radius: 10px;
-            border: 3px solid #FFD700;
-            overflow: hidden;
-        }
-
-        .image-container {
-            position: relative;
-            width: 100%;
-        }
-
-        .image-container img {
-            width: 100%;
-            height: auto; /* Fixes zoom issue */
-            display: block;
-            position: absolute;
-        }
-
-        #after-img {
-            clip-path: inset(0 50% 0 0);
-        }
-
-        .slider {
-            position: absolute;
-            top: 50%;
-            left: 0;
-            width: 100%;
-            transform: translateY(-50%);
-            z-index: 2;
-            opacity: 0.8;
-        }
-
-        /* Testimonials */
-        .testimonial {
-            background: rgba(255, 255, 255, 0.1);
-            padding: 15px;
-            border-radius: 5px;
-            margin: 15px auto;
-            width: 80%;
-            text-align: center;
-        }
-
-        /* Gallery Images */
+        /* Side-by-Side Before & After Images (Fixed Scaling) */
         .gallery {
             display: flex;
             justify-content: center;
@@ -123,8 +76,9 @@
         }
 
         .gallery img {
-            width: 500px;
-            height: 300px;
+            width: 48%;
+            max-width: 500px;
+            height: auto;
             object-fit: cover;
             border-radius: 5px;
             border: 3px solid #FFD700;
@@ -133,6 +87,16 @@
 
         .gallery img:hover {
             transform: scale(1.05);
+        }
+
+        /* Testimonials */
+        .testimonial {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 15px;
+            border-radius: 5px;
+            margin: 15px auto;
+            width: 80%;
+            text-align: center;
         }
 
         /* Social Media Icons */
@@ -163,7 +127,6 @@
             font-weight: bold;
             text-decoration: none;
         }
-
     </style>
 </head>
 <body>
@@ -179,13 +142,10 @@
 
     <h2 class="fade-in">Project Gallery</h2>
 
-    <!-- Before & After Image Comparison (Fixed) -->
-    <div class="comparison-slider">
-        <div class="image-container">
-            <img src="before.jpeg" alt="Before Renovation" id="before-img">
-            <img src="after.jpg" alt="After Renovation" id="after-img">
-        </div>
-        <input type="range" min="0" max="100" value="50" class="slider" id="slider">
+    <!-- Side-by-Side Before & After Images -->
+    <div class="gallery">
+        <img src="before.jpeg" alt="Before Renovation">
+        <img src="after.jpg" alt="After Renovation">
     </div>
 
     <h2 class="fade-in">What Our Clients Say</h2>
@@ -220,7 +180,7 @@
     Let's Build Your Dream Home – Contact Us Today!
 </footer>
 
-<!-- JavaScript for animations & Before/After slider -->
+<!-- JavaScript for animations -->
 <script>
     document.addEventListener("scroll", function () {
         document.querySelectorAll(".fade-in").forEach((el) => {
@@ -228,11 +188,6 @@
                 el.classList.add("show");
             }
         });
-    });
-
-    document.getElementById("slider").addEventListener("input", function () {
-        let value = this.value;
-        document.getElementById("after-img").style.clipPath = `inset(0 ${100 - value}% 0 0)`;
     });
 </script>
 
