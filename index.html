@@ -5,30 +5,56 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Revive & Thrive Renovations</title>
     <style>
+        /* General Styles */
         body {
             font-family: Arial, sans-serif;
-            background-color: #0A1F44; /* Deep navy matching logo */
+            background-color: #0A1F44;
             color: white;
             margin: 0;
             padding: 0;
             text-align: center;
         }
+
+        /* Header & Logo */
         header {
-            background: linear-gradient(to right, #FF6A00, #FFD700); /* Sunset gradient */
-            padding: 20px;
-            color: black;
-            font-size: 26px;
-            font-weight: bold;
-            text-transform: uppercase;
+            text-align: center;
+            padding: 20px 0;
+            background: linear-gradient(to right, #FF6A00, #FFD700);
         }
+
+        .logo {
+            width: 250px;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+
+        h1 {
+            color: black;
+            margin-top: 10px;
+            font-size: 24px;
+        }
+
+        /* Container & Section Styling */
         .container {
             padding: 20px;
         }
+
         h2 {
-            color: #FFD700; /* Gold accent for section headings */
+            color: #FFD700;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.5s ease-in-out;
         }
+
+        h2.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Buttons */
         .btn {
-            background-color: #FF6A00; /* Orange from logo */
+            background-color: #FF6A00;
             color: white;
             padding: 15px 25px;
             text-decoration: none;
@@ -38,6 +64,51 @@
             margin-top: 20px;
             font-weight: bold;
         }
+
+        /* Before & After Image Slider */
+        .comparison-slider {
+            position: relative;
+            width: 90%;
+            max-width: 500px;
+            height: 300px;
+            overflow: hidden;
+            margin: 20px auto;
+            border-radius: 10px;
+            border: 3px solid #FFD700;
+        }
+
+        .before, .after {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .after img {
+            clip-path: inset(0 50% 0 0);
+        }
+
+        .slider {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            width: 100%;
+            transform: translateY(-50%);
+            z-index: 2;
+        }
+
+        /* Testimonials */
+        .testimonial {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 15px;
+            border-radius: 5px;
+            margin: 15px auto;
+            width: 80%;
+            text-align: center;
+        }
+
+        /* Gallery Images */
         .gallery {
             display: flex;
             justify-content: center;
@@ -46,55 +117,87 @@
             flex-wrap: wrap;
             padding: 20px;
         }
+
         .gallery img {
             width: 500px;
             height: 300px;
             object-fit: cover;
             border-radius: 5px;
             border: 3px solid #FFD700;
+            transition: transform 0.3s ease-in-out;
         }
+
+        .gallery img:hover {
+            transform: scale(1.05);
+        }
+
+        /* Social Media Icons */
+        .social-icons {
+            margin-top: 20px;
+        }
+
+        .social-icons a {
+            margin: 0 10px;
+            text-decoration: none;
+        }
+
+        .social-icons img {
+            width: 40px;
+            height: 40px;
+        }
+
+        /* Footer */
         footer {
             background: linear-gradient(to right, #FF6A00, #FFD700);
             padding: 15px;
             font-weight: bold;
             margin-top: 20px;
         }
+
         a {
             color: #FFD700;
             font-weight: bold;
             text-decoration: none;
         }
-        .social-icons {
-            margin-top: 20px;
-        }
-        .social-icons a {
-            margin: 0 10px;
-            text-decoration: none;
-        }
-        .social-icons img {
-            width: 40px;
-            height: 40px;
-        }
+
     </style>
 </head>
 <body>
 
 <header>
-    Revive & Thrive Renovations
+    <img src="rtrlogo.png" alt="Revive & Thrive Renovations Logo" class="logo">
+    <h1>Revive & Thrive Renovations</h1>
 </header>
 
 <div class="container">
-    <h2>Turning Houses into Homes</h2>
+    <h2 class="fade-in">Turning Houses into Homes</h2>
     <p>High-end renovations, expert demolition, precision tiling, and luxury designs.</p>
 
-    <h2>Project Gallery</h2>
+    <h2 class="fade-in">Project Gallery</h2>
 
-    <div class="gallery">
-        <img src="before.jpeg" alt="Before Renovation">
-        <img src="after.jpg" alt="After Renovation">
+    <!-- Before & After Image Comparison -->
+    <div class="comparison-slider">
+        <div class="before">
+            <img src="before.jpeg" alt="Before Renovation" loading="lazy">
+        </div>
+        <div class="after">
+            <img src="after.jpg" alt="After Renovation" loading="lazy">
+        </div>
+        <input type="range" min="0" max="100" value="50" class="slider">
     </div>
 
-    <h2>Contact Us</h2>
+    <h2 class="fade-in">What Our Clients Say</h2>
+    <div class="testimonial">
+        <p>"Revive & Thrive transformed my outdated kitchen into a modern masterpiece. Highly recommend!"</p>
+        <span>- Sarah M., Connecticut</span>
+    </div>
+
+    <div class="testimonial">
+        <p>"Fast, professional, and high-quality work. These guys know what they're doing!"</p>
+        <span>- John D., New York</span>
+    </div>
+
+    <h2 class="fade-in">Contact Us</h2>
     <p>📞 Call or Text: <a href="tel:8608535544">860-853-5544</a></p>
     <p>📧 Email: <a href="mailto:Jake.thrive@gmail.com">Jake.thrive@gmail.com</a></p>
 
@@ -114,6 +217,21 @@
 <footer>
     Let's Build Your Dream Home – Contact Us Today!
 </footer>
+
+<!-- JavaScript for animations & Before/After slider -->
+<script>
+document.addEventListener("scroll", function () {
+    document.querySelectorAll(".fade-in").forEach((el) => {
+        if (el.getBoundingClientRect().top < window.innerHeight - 50) {
+            el.classList.add("show");
+        }
+    });
+});
+
+document.querySelector(".slider").addEventListener("input", function () {
+    document.querySelector(".after img").style.clipPath = `inset(0 ${100 - this.value}% 0 0)`;
+});
+</script>
 
 </body>
 </html>
