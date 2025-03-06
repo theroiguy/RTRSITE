@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get a Free Quote</title>
+    <style>
+        body { font-family: Arial, sans-serif; background-color: #0A1F44; color: white; text-align: center; }
+        header { background: linear-gradient(to right, #FF6A00, #FFD700); padding: 20px; font-size: 26px; font-weight: bold; }
+        .container { max-width: 600px; margin: auto; padding: 20px; background-color: rgba(255, 255, 255, 0.1); border-radius: 10px; }
+        input, textarea { width: 100%; padding: 10px; margin-bottom: 10px; border-radius: 5px; border: none; font-size: 16px; }
+        .btn { background: linear-gradient(to right, #FF6A00, #FFD700); color: black; padding: 15px 25px; font-size: 18px; border-radius: 5px; display: inline-block; font-weight: bold; cursor: pointer; border: none; width: 100%; }
+    </style>
+</head>
+<body>
+
+<header>Get a Free Quote</header>
+
+<div class="container">
+    <form id="quoteForm">
+        <label for="name">Full Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">Email Address:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="phone">Phone Number:</label>
+        <input type="tel" id="phone" name="phone" required>
+
+        <label for="message">Tell us about your project:</label>
+        <textarea id="message" name="message" rows="4" required></textarea>
+
+        <button type="submit" class="btn">Submit Request</button>
+    </form>
+</div>
+
+<script>
+    document.getElementById("quoteForm").addEventListener("submit", function(event) {
+        event.preventDefault();
+        var formData = {
+            name: document.getElementById("name").value,
+            email: document.getElementById("email").value,
+            phone: document.getElementById("phone").value,
+            message: document.getElementById("message").value
+        };
+        
+        fetch("https://script.google.com/macros/s/AKfycbwGN7mTjv3Fb5Y88U-taodqJpcibgYeWsKmyCThNT39buNniOipN03iWYirSxkoWPCB/exec", {
+            method: "POST",
+            body: JSON.stringify(formData),
+            headers: { "Content-Type": "application/json" }
+        })
+        .then(response => response.text())
+        .then(data => {
+            alert("Thank you! Your request has been submitted.");
+            window.location.href = "thank-you.html";
+        })
+        .catch(error => console.error("Error:", error));
+    });
+</script>
+
+</body>
+</html>
