@@ -3,69 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Get a Free Quote</title>
+    <title>Get a Free Quote - Revive & Thrive</title>
     <style>
-        body { font-family: Arial, sans-serif; background-color: #0A1F44; color: white; text-align: center; }
-        header { background: linear-gradient(to right, #FF6A00, #FFD700); padding: 20px; font-size: 26px; font-weight: bold; }
-        .container { max-width: 600px; margin: auto; padding: 20px; background-color: rgba(255, 255, 255, 0.1); border-radius: 10px; }
-        input, textarea { width: 100%; padding: 10px; margin-bottom: 10px; border-radius: 5px; border: none; font-size: 16px; }
-        .btn { background: linear-gradient(to right, #FF6A00, #FFD700); color: black; padding: 15px 25px; font-size: 18px; border-radius: 5px; display: inline-block; font-weight: bold; cursor: pointer; border: none; width: 100%; }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #1a1a2e;
+            color: white;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background: #16213e;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+        }
+        h1 {
+            color: #fddb3a;
+        }
+        iframe {
+            width: 100%;
+            height: 1000px;
+            border: none;
+        }
     </style>
 </head>
 <body>
 
-<header>Get a Free Quote</header>
-
-<div class="container">
-    <form id="quoteForm">
-        <label for="name">Full Name:</label>
-        <input type="text" id="name" name="name" required>
-
-        <label for="email">Email Address:</label>
-        <input type="email" id="email" name="email" required>
-
-        <label for="phone">Phone Number:</label>
-        <input type="tel" id="phone" name="phone" required>
-
-        <label for="message">Tell us about your project:</label>
-        <textarea id="message" name="message" rows="4" required></textarea>
-
-        <button type="submit" class="btn">Submit Request</button>
-    </form>
-</div>
-
-<script>
-    document.getElementById("quoteForm").addEventListener("submit", function(event) {
-        event.preventDefault(); // Stop page reload
-
-        var formData = {
-            name: document.getElementById("name").value,
-            email: document.getElementById("email").value,
-            phone: document.getElementById("phone").value,
-            message: document.getElementById("message").value
-        };
-
-        fetch("https://script.google.com/macros/s/AKfycbyE2VGT8V-foR0Jv5vPIrMa52hvYyeToB_lMNczWI98ET6LVigXUZv4igy7Ry2CEMkmjg/exec", {  // Replace with your actual Web App URL
-            method: "POST",
-            body: JSON.stringify(formData),
-            headers: { "Content-Type": "application/json" }
-        })
-        .then(response => response.json())
-        .then(data => {
-            console.log("Response received:", data);
-            if (data.status === "Success") {
-                alert("Thank you! Your request has been submitted.");
-                window.location.href = "thank-you.html"; // Redirect on success
-            } else {
-                alert("Error submitting form. Please try again.");
-            }
-        })
-        .catch(error => {
-            console.error("Error:", error);
-            alert("There was an issue submitting your request. Please try again.");
-        });
-    });
-</script>
+    <div class="container">
+        <h1>Get a Free Quote</h1>
+        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScbmy_asiNpe12vRjLuwqP58fB0B2JBTtJ0duE5TxqE1MWbVA/viewform?embedded=true" width="100%" height="1013" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+    </div>
 
 </body>
 </html>
