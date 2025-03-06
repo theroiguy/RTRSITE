@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery - Revive & Thrive Renovations</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #0A1F44;
+            color: white;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        header {
+            text-align: center;
+            padding: 20px 0;
+            background: linear-gradient(to right, #FF6A00, #FFD700);
+        }
+
+        .logo {
+            width: 200px;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+
+        h1 {
+            color: black;
+            font-size: 24px;
+        }
+
+        /* Gallery Grid */
+        .gallery-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            padding: 20px;
+            max-width: 90%;
+            margin: auto;
+        }
+
+        .gallery-container img {
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+            border: 3px solid #FFD700;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .gallery-container img:hover {
+            transform: scale(1.05);
+        }
+
+        .btn {
+            background-color: #FF6A00;
+            color: white;
+            padding: 15px 25px;
+            text-decoration: none;
+            font-size: 18px;
+            border-radius: 5px;
+            display: inline-block;
+            margin: 20px auto;
+            font-weight: bold;
+        }
+
+        footer {
+            background: linear-gradient(to right, #FF6A00, #FFD700);
+            padding: 15px;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <img src="rtrlogo.png" alt="Revive & Thrive Renovations Logo" class="logo">
+    <h1>Revive & Thrive Renovations - Project Gallery</h1>
+</header>
+
+<h2>Project Gallery</h2>
+
+<div class="gallery-container">
+    <!-- Loop through images 1.png to 29.png -->
+    <script>
+        for (let i = 1; i <= 29; i++) {
+            document.write(`<img src="${i}.png" alt="Project Image ${i}">`);
+        }
+    </script>
+</div>
+
+<a href="index.html" class="btn">Back to Home</a>
+
+<footer>
+    Let's Build Your Dream Home – Contact Us Today!
+</footer>
+
+</body>
+</html>
