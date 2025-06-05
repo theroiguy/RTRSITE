@@ -28,6 +28,13 @@ h1 {
     margin-top: 10px;
 }
 
+/* Image defaults */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
 /* Navigation */
 .navbar {
     background-color: #16213e;
@@ -144,6 +151,29 @@ h1 {
     text-align: center;
 }
 
+.gallery img, .testimonial img {
+    max-width: 300px;
+    width: 100%;
+    border-radius: 6px;
+    margin: 10px auto;
+}
+
+/* Before & After images */
+.before-after {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin: 20px 0;
+}
+
+.before-after img {
+    max-width: 500px;
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
 /* Review */
 .review {
     background: rgba(255, 255, 255, 0.1);
@@ -229,6 +259,17 @@ footer {
 .fade-in.show {
     opacity: 1;
     transform: none;
+}
+
+img[loading="lazy"] {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.lazy-loaded {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 /* Lightbox */

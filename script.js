@@ -51,4 +51,17 @@ function initLightbox() {
     });
 }
 
-document.addEventListener('DOMContentLoaded', initLightbox);
+function handleLazyLoadedImages() {
+    document.querySelectorAll('img[loading="lazy"]').forEach(img => {
+        if (img.complete) {
+            img.classList.add('lazy-loaded');
+        } else {
+            img.addEventListener('load', () => img.classList.add('lazy-loaded'));
+        }
+    });
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    initLightbox();
+    handleLazyLoadedImages();
+});
