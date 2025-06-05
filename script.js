@@ -5,6 +5,10 @@ window.addEventListener('scroll', () => {
             el.classList.add('show');
         }
     });
+    const nav = document.querySelector('.navbar');
+    if (nav) {
+        nav.classList.toggle('shadow', window.scrollY > 50);
+    }
     // Back to top visibility
     const btn = document.getElementById('back-to-top');
     if (btn) {
@@ -23,3 +27,28 @@ if ('serviceWorker' in navigator) {
         navigator.serviceWorker.register('sw.js');
     });
 }
+
+// Lightbox for gallery
+function initLightbox() {
+    const images = document.querySelectorAll('.gallery-grid img');
+    if (!images.length) return;
+    const lightbox = document.createElement('div');
+    lightbox.className = 'lightbox';
+    lightbox.innerHTML = '<span class="lightbox-close">&times;</span><img>';
+    document.body.appendChild(lightbox);
+    const lbImg = lightbox.querySelector('img');
+    lightbox.addEventListener('click', e => {
+        if (e.target.classList.contains('lightbox-close') || e.target === lightbox) {
+            lightbox.classList.remove('show');
+        }
+    });
+    images.forEach(img => {
+        img.addEventListener('click', () => {
+            lbImg.src = img.src;
+            lbImg.alt = img.alt;
+            lightbox.classList.add('show');
+        });
+    });
+}
+
+document.addEventListener('DOMContentLoaded', initLightbox);
