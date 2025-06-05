@@ -4,10 +4,58 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Thank You!</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #0A1F44;
+            color: white;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Navigation Bar */
+        .navbar {
+            background-color: #16213e;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .navbar a {
+            color: #FFD700;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .navbar a:hover {
+            text-decoration: underline;
+        }
+
+        .btn {
+            background-color: #FF6A00;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            display: inline-block;
+            margin-top: 20px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+    </style>
 </head>
 <body>
+
+<nav class="navbar">
+    <a href="index.html">Home</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="testimonials.html">Testimonials</a>
+    <a href="reviews.html">Reviews</a>
+    <a href="quote-form.html">Free Quote</a>
+</nav>
+
     <h2>Thank You!</h2>
     <p>Your request has been submitted successfully. We'll get back to you soon!</p>
-    <a href="index.html">Return to Home</a>
+    <a href="index.html" class="btn">Return to Home</a>
 </body>
 </html>
