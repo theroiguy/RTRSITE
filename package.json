@@ -1,0 +1,9 @@
+{
+  "name": "rtrsite",
+  "version": "1.0.0",
+  "description": "Revive & Thrive Renovations GitHub Pages site",
+  "scripts": {
+    "test": "echo \"No test suite defined.\" && exit 0"
+  },
+  "license": "MIT"
+}
