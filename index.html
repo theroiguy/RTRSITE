@@ -17,160 +17,13 @@
     <meta name="twitter:description" content="High-end renovations, expert demolition, precision tiling, and luxury designs.">
     <meta name="twitter:image" content="https://theroiguy.github.io/RTRSITE/rtrlogo.png">
     <title>Revive & Thrive Renovations</title>
-    <style>
-        /* General Styles */
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #0A1F44;
-            color: white;
-            margin: 0;
-            padding: 0;
-            text-align: center;
-        }
-
-        /* Header & Logo */
-        header {
-            text-align: center;
-            padding: 20px 0;
-            background: linear-gradient(to right, #FF6A00, #FFD700);
-        }
-
-        .logo {
-            width: 250px;
-            height: auto;
-            display: block;
-            margin: 0 auto;
-        }
-
-        h1 {
-            color: black;
-            margin-top: 10px;
-            font-size: 24px;
-        }
-
-        /* Navigation Bar */
-        .navbar {
-            background-color: #16213e;
-            padding: 10px;
-            text-align: center;
-        }
-
-        .navbar a {
-            color: #FFD700;
-            margin: 0 15px;
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        .navbar a:hover {
-            text-decoration: underline;
-        }
-
-        /* Container & Section Styling */
-        .container {
-            padding: 20px;
-        }
-
-        h2 {
-            color: #FFD700;
-            opacity: 0;
-            transform: translateY(20px);
-            transition: all 0.5s ease-in-out;
-        }
-
-        h2.show {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* Buttons */
-        .btn {
-            background-color: #FF6A00;
-            color: white;
-            padding: 15px 25px;
-            text-decoration: none;
-            font-size: 18px;
-            border-radius: 5px;
-            display: inline-block;
-            margin-top: 20px;
-            font-weight: bold;
-        }
-
-        /* Side-by-Side Before & After Images (Now 100% Matched) */
-        .gallery {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 20px;
-            flex-wrap: wrap;
-            padding: 20px;
-        }
-
-        .gallery img {
-            width: 500px; /* Fixed width to make images identical */
-            height: 300px; /* Fixed height to match aspect ratio */
-            object-fit: cover; /* Ensures the images fit perfectly */
-            border-radius: 5px;
-            border: 3px solid #FFD700;
-            transition: transform 0.3s ease-in-out;
-        }
-
-        .gallery img:hover {
-            transform: scale(1.05);
-        }
-        
-        .image-label {
-            text-align: center;
-            font-size: 18px;
-            font-weight: bold;
-            color: #FFD700; /* Gold color */
-            margin-top: 2px;
-        }
-        
-        /* Testimonials */
-        .testimonial {
-            background: rgba(255, 255, 255, 0.1);
-            padding: 15px;
-            border-radius: 5px;
-            margin: 15px auto;
-            width: 80%;
-            text-align: center;
-        }
-
-        /* Social Media Icons */
-        .social-icons {
-            margin-top: 20px;
-        }
-
-        .social-icons a {
-            margin: 0 10px;
-            text-decoration: none;
-        }
-
-        .social-icons img {
-            width: 40px;
-            height: 40px;
-        }
-
-        /* Footer */
-        footer {
-            background: linear-gradient(to right, #FF6A00, #FFD700);
-            padding: 15px;
-            font-weight: bold;
-            margin-top: 20px;
-        }
-
-        a {
-            color: #FFD700;
-            font-weight: bold;
-            text-decoration: none;
-        }
-    </style>
+    <meta name="theme-color" content="#FF6A00">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <header>
-    <img src="rtrlogo.png" alt="Revive & Thrive Renovations Logo" class="logo">
+    <img loading="lazy" src="rtrlogo.png" alt="Revive & Thrive Renovations Logo" class="logo">
     <h1>Revive & Thrive Renovations</h1>
 </header>
 
@@ -191,11 +44,11 @@
     <!-- Side-by-Side Before & After Images (Fixed) -->
     <div class="gallery">
     <div class="gallery-item">
-        <img src="before.jpeg" alt="Before Renovation">
+        <img loading="lazy" src="before.jpeg" alt="Before Renovation">
         <p class="image-label">Before</p>
     </div>
     <div class="gallery-item">
-        <img src="after.jpg" alt="After Renovation">
+        <img loading="lazy" src="after.jpg" alt="After Renovation">
         <p class="image-label">After</p>
     </div>
 </div>
@@ -229,10 +82,10 @@
     <!-- Social Media Links -->
     <div class="social-icons">
         <a href="https://www.facebook.com/people/Revive-Thrive-Renovations/61553410145333/" target="_blank">
-            <img src="facebook-icon.png" alt="Facebook">
+            <img loading="lazy" src="facebook-icon.png" alt="Facebook">
         </a>
         <a href="https://www.instagram.com/jakefromrealestatect/" target="_blank">
-            <img src="instagram-icon.png" alt="Instagram">
+            <img loading="lazy" src="instagram-icon.png" alt="Instagram">
         </a>
     </div>
 
@@ -246,16 +99,8 @@
 <p><strong>CT HIC License:</strong> HIC.0671420 | <strong>Fully Insured Contractor</strong></p>
 </footer>
 
-<!-- JavaScript for animations -->
-<script>
-    document.addEventListener("scroll", function () {
-        document.querySelectorAll(".fade-in").forEach((el) => {
-            if (el.getBoundingClientRect().top < window.innerHeight - 50) {
-                el.classList.add("show");
-            }
-        });
-    });
-</script>
+<div id="back-to-top" onclick="scrollToTop()">Top</div>
+<script src="script.js" defer></script>
 
 </body>
 </html>
