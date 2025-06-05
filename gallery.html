@@ -4,100 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gallery - Revive & Thrive Renovations</title>
-    <style>
-        /* General Styles */
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #0A1F44;
-            color: white;
-            margin: 0;
-            padding: 0;
-            text-align: center;
-        }
-
-        header {
-            text-align: center;
-            padding: 20px 0;
-            background: linear-gradient(to right, #FF6A00, #FFD700);
-        }
-
-        .logo {
-            width: 200px;
-            height: auto;
-            display: block;
-            margin: 0 auto;
-        }
-
-        h1 {
-            color: black;
-            font-size: 24px;
-        }
-
-        /* Navigation Bar */
-        .navbar {
-            background-color: #16213e;
-            padding: 10px;
-            text-align: center;
-        }
-
-        .navbar a {
-            color: #FFD700;
-            margin: 0 15px;
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        .navbar a:hover {
-            text-decoration: underline;
-        }
-
-        /* Gallery Grid */
-        .gallery-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 15px;
-            padding: 20px;
-            max-width: 90%;
-            margin: auto;
-        }
-
-        .gallery-container img {
-            width: 400px; /* Ensures all images are the same width */
-            height: 250px; /* Ensures all images are the same height */
-            object-fit: cover; /* Prevents distortion while keeping the image visually appealing */
-            border-radius: 5px;
-            border: 3px solid #FFD700;
-            transition: transform 0.3s ease-in-out;
-        }
-
-        .gallery-container img:hover {
-            transform: scale(1.05);
-        }
-
-        .btn {
-            background-color: #FF6A00;
-            color: white;
-            padding: 15px 25px;
-            text-decoration: none;
-            font-size: 18px;
-            border-radius: 5px;
-            display: inline-block;
-            margin: 20px auto;
-            font-weight: bold;
-        }
-
-        footer {
-            background: linear-gradient(to right, #FF6A00, #FFD700);
-            padding: 15px;
-            font-weight: bold;
-            margin-top: 20px;
-        }
-    </style>
+    <meta name="theme-color" content="#FF6A00">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <header>
-    <img src="rtrlogo.png" alt="Revive & Thrive Renovations Logo" class="logo">
+    <img loading="lazy" src="rtrlogo.png" alt="Revive & Thrive Renovations Logo" class="logo">
     <h1>Revive & Thrive Renovations - Project Gallery</h1>
 </header>
 
@@ -115,12 +28,12 @@
     <!-- Loop through images 1.png to 29.png -->
     <script>
         for (let i = 2; i <= 29; i++) {
-            document.write(`<img src="${i}.png" alt="Project Image ${i}">`);
+            document.write(`<img loading="lazy" src="${i}.png" alt="Project Image ${i}">`);
         }
     </script>
 
-    <img src="gallery2.jpg" alt="Bathroom Remodel Testimonial - Lana C.">
-    <img src="gallery3.jpg" alt="Framing Work in Progress">
+    <img loading="lazy" src="gallery2.jpg" alt="Bathroom Remodel Testimonial - Lana C.">
+    <img loading="lazy" src="gallery3.jpg" alt="Framing Work in Progress">
 
 </div>
 
@@ -131,6 +44,8 @@
 <p><a href="reviews.html" class="btn">Google Reviews</a></p>
 <p><strong>CT HIC License:</strong> HIC.0671420 | <strong>Fully Insured Contractor</strong></p>
 </footer>
+<div id="back-to-top" onclick="scrollToTop()">Top</div>
+<script src="script.js" defer></script>
 
 
 </body>
