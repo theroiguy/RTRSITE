@@ -156,6 +156,19 @@ h1 {
     margin-bottom: 10px;
 }
 
+/* Social media icons */
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 20px 0;
+}
+
+.social-icons img {
+    width: 40px;
+    height: 40px;
+}
+
 /* Forms */
 .container {
     padding: 20px;
