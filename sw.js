@@ -1,17 +1,17 @@
-const CACHE_NAME = 'rtrsite-cache-v1';
+const CACHE_NAME = 'rtrsite-cache-v2';
 const ASSETS = [
-  '/',
-  'index.html',
-  'gallery.html',
-  'testimonials.html',
-  'reviews.html',
-  'quote-form.html',
-  'thank-you.html',
-  'style.css',
-  'script.js',
-  'rtrlogo.png',
-  'facebook-icon.png',
-  'instagram-icon.png',
+  './index.html',
+  './gallery.html',
+  './testimonials.html',
+  './reviews.html',
+  './contact.html',
+  './quote-form.html',
+  './thank-you.html',
+  './style.min.css',
+  './script.min.js',
+  './rtrlogo.png',
+  './facebook-icon.png',
+  './instagram-icon.png',
 ];
 
 self.addEventListener('install', event => {
