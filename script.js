@@ -62,7 +62,20 @@ function handleLazyLoadedImages() {
     });
 }
 
+function loadGallery() {
+    const grid = document.getElementById('gallery');
+    if (!grid) return;
+    for (let i = 1; i <= 31; i++) {
+        const img = document.createElement('img');
+        img.loading = 'lazy';
+        img.src = `images/gallery/photo${i}.jpg`;
+        img.alt = `Project Image ${i}`;
+        grid.appendChild(img);
+    }
+}
+
 document.addEventListener('DOMContentLoaded', () => {
+    loadGallery();
     initLightbox();
     handleLazyLoadedImages();
 });

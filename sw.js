@@ -1,4 +1,4 @@
-const CACHE_NAME = 'rtrsite-cache-v2';
+const CACHE_NAME = 'rtrsite-cache-v3';
 const ASSETS = [
   './index.html',
   './gallery.html',
@@ -9,7 +9,7 @@ const ASSETS = [
   './thank-you.html',
   './style.min.css',
   './script.min.js',
-  './rtrlogo.png',
+  './images/logo.png',
   './facebook-icon.png',
   './instagram-icon.png',
 ];
