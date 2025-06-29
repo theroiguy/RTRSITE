@@ -246,9 +246,10 @@ footer {
 }
 
 /*
- * Only apply the fade-in effect when JavaScript adds the
- * `.lazy-loaded` class. This keeps images visible even if the
- * script fails to run.
+ * Only apply the fade-in effect when JavaScript is able to run.
+ * Images remain visible by default, but JS will add a `lazy-init`
+ * class to trigger the transition and a `lazy-loaded` class once
+ * the image has finished loading.
  */
 img[loading="lazy"] {
     transition: opacity 0.6s ease, transform 0.6s ease;
@@ -259,7 +260,7 @@ img.lazy-loaded {
     transform: translateY(0);
 }
 
-img[loading="lazy"]:not(.lazy-loaded) {
+.lazy-init:not(.lazy-loaded) {
     opacity: 0;
     transform: translateY(20px);
 }

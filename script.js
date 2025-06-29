@@ -53,6 +53,7 @@ function initLightbox() {
 
 function handleLazyLoadedImages() {
     document.querySelectorAll('img[loading="lazy"]').forEach(img => {
+        img.classList.add('lazy-init');
         if (img.complete) {
             img.classList.add('lazy-loaded');
         } else {
