@@ -84,6 +84,20 @@ img {
     background-color: #e85d00;
     transform: translateY(-2px);
 }
+/* Before & After Section */
+.before-after {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+
+.before-after img {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 5px;
+}
 /* Gallery */
 .gallery-grid {
     display: grid;
