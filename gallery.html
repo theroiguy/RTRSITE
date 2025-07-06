@@ -29,6 +29,21 @@
 
 <div class="gallery-grid" id="gallery"></div>
 
+<!--
+    The gallery images are injected by script.js. If images fail to load,
+    open the browser console and look for 404 errors which indicate incorrect
+    paths or missing files.
+-->
+
+<section class="troubleshoot">
+    <h3>Troubleshooting</h3>
+    <ul>
+        <li>Verify each <code>photo#.jpg</code> file exists in <code>images/gallery</code>.</li>
+        <li>Ensure the image paths in <code>script.js</code> match your deployment folder structure.</li>
+        <li>If updates do not appear, clear the browser cache or perform a hard refresh.</li>
+    </ul>
+</section>
+
 <a href="index.html" class="btn">Back to Home</a>
 
 <footer>
@@ -38,6 +53,7 @@
     <p><strong>CT HIC License:</strong> HIC.0671420 | <strong>Fully Insured Contractor</strong></p>
 </footer>
 <div id="back-to-top" onclick="scrollToTop()">Top</div>
+<!-- Load the gallery script. Open the browser console if images fail to load -->
 <script src="script.min.js" defer></script>
 
 

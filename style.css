@@ -66,6 +66,23 @@ img {
     }
 }
 
+/* Troubleshooting section styling */
+.troubleshoot {
+    max-width: 800px;
+    margin: 20px auto;
+    text-align: left;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 5px;
+}
+.troubleshoot h3 {
+    color: #FFD700;
+    margin-top: 0;
+}
+.troubleshoot li {
+    margin-bottom: 10px;
+}
+
 /* Buttons */
 .btn {
     background-color: #FF6A00;

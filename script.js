@@ -65,11 +65,19 @@ function handleLazyLoadedImages() {
 function loadGallery() {
     const grid = document.getElementById('gallery');
     if (!grid) return;
+    // Path relative to the current HTML file. Adjust if you deploy to a
+    // different subdirectory.
+    const basePath = 'images/gallery';
     for (let i = 1; i <= 31; i++) {
         const img = document.createElement('img');
         img.loading = 'lazy';
-        img.src = `/RTRSITE/images/gallery/photo${i}.jpg`;
+        img.src = `${basePath}/photo${i}.jpg`;
         img.alt = `Project Image ${i}`;
+        // If an image fails to load, log a message to help debugging.
+        img.onerror = () => {
+            console.error(`Failed to load ${img.src}. Check the path or file.`);
+            img.remove();
+        };
         grid.appendChild(img);
     }
 }
