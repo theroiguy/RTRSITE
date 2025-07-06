@@ -62,23 +62,36 @@ function handleLazyLoadedImages() {
     });
 }
 
-function loadGallery() {
+// Load gallery images and verify each file exists before displaying it.
+// This helps catch path issues or missing assets on the server.
+async function loadGallery() {
     const grid = document.getElementById('gallery');
     if (!grid) return;
     // Path relative to the current HTML file. Adjust if you deploy to a
     // different subdirectory.
     const basePath = 'images/gallery';
     for (let i = 1; i <= 31; i++) {
-        const img = document.createElement('img');
-        img.loading = 'lazy';
-        img.src = `${basePath}/photo${i}.jpg`;
-        img.alt = `Project Image ${i}`;
-        // If an image fails to load, log a message to help debugging.
-        img.onerror = () => {
-            console.error(`Failed to load ${img.src}. Check the path or file.`);
-            img.remove();
-        };
-        grid.appendChild(img);
+        const url = `${basePath}/photo${i}.jpg`;
+        try {
+            // Use a HEAD request to confirm the image exists before creating
+            // the element. If the request fails, log the HTTP status.
+            const resp = await fetch(url, { method: 'HEAD' });
+            if (resp.ok) {
+                const img = document.createElement('img');
+                img.loading = 'lazy';
+                img.src = url;
+                img.alt = `Project Image ${i}`;
+                img.onerror = () => {
+                    console.error(`Failed to load ${img.src}. Check the path or file.`);
+                    img.remove();
+                };
+                grid.appendChild(img);
+            } else {
+                console.error(`Image not found (HTTP ${resp.status}): ${url}`);
+            }
+        } catch (err) {
+            console.error(`Error checking image ${url}:`, err);
+        }
     }
 }
 
