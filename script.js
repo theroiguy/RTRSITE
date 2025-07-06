@@ -68,7 +68,7 @@ function loadGallery() {
     for (let i = 1; i <= 31; i++) {
         const img = document.createElement('img');
         img.loading = 'lazy';
-        img.src = `images/gallery/photo${i}.jpg`;
+        img.src = `/RTRSITE/images/gallery/photo${i}.jpg`;
         img.alt = `Project Image ${i}`;
         grid.appendChild(img);
     }
