@@ -1,3 +1,5 @@
+---
+---
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,12 +9,12 @@
     <meta name="description" content="Browse our renovation projects gallery showcasing our craftsmanship.">
     <meta name="keywords" content="renovation, remodeling, kitchen, bathroom, home improvement, Connecticut">
     <meta name="theme-color" content="#FF6A00">
-    <link rel="stylesheet" href="style.min.css">
+    <link rel="stylesheet" href="{{ site.baseurl }}/style.css?v={{ site.time | date: '%s' }}">
 </head>
 <body>
 
 <header>
-    <img loading="lazy" src="/RTRSITE/images/logo.png" alt="Revive & Thrive Renovations Logo" class="logo">
+    <img loading="lazy" src="{{ site.baseurl }}/images/logo.png" alt="Revive & Thrive Renovations Logo" class="logo">
     <h1>Revive & Thrive Renovations - Project Gallery</h1>
 </header>
 
@@ -27,21 +29,12 @@
 
 <h2>Project Gallery</h2>
 
-<div class="gallery-grid" id="gallery"></div>
-
-<!--
-    The gallery images are injected by script.js. If images fail to load,
-    open the browser console and look for 404 errors which indicate incorrect
-    paths or missing files.
--->
-
-<section class="troubleshoot">
-    <h3>Troubleshooting</h3>
-    <ul>
-        <li>Verify each <code>photo#.jpg</code> file exists in <code>images/gallery</code>.</li>
-        <li>Ensure the image paths in <code>script.js</code> match your deployment folder structure.</li>
-        <li>If updates do not appear, clear the browser cache or perform a hard refresh.</li>
-    </ul>
+<section id="gallery" class="gallery">
+  <div class="grid">
+    {% for p in site.data.gallery %}
+      <img src="{{ site.baseurl }}/assets/img/gallery/{{ p }}" alt="Project photo" loading="lazy" width="800" height="600">
+    {% endfor %}
+  </div>
 </section>
 
 <a href="index.html" class="btn">Back to Home</a>
@@ -53,9 +46,7 @@
     <p><strong>CT HIC License:</strong> HIC.0671420 | <strong>Fully Insured Contractor</strong></p>
 </footer>
 <div id="back-to-top" onclick="scrollToTop()">Top</div>
-<!-- Load the gallery script. Open the browser console if images fail to load -->
-<script src="script.min.js" defer></script>
-
+<script src="{{ site.baseurl }}/script.min.js?v={{ site.time | date: '%s' }}" defer></script>
 
 </body>
 </html>
